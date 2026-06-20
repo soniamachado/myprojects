@@ -91,6 +91,7 @@ main {
     "intro video"
     "tabela tabela";
   gap: 1.5em;
+  padding: 8px;
 }
 .intro {
   grid-area: intro;
@@ -100,16 +101,22 @@ main {
 }
 .video-section {
   grid-area: video;
+  justify-items: center;
 }
 /* ecrãs grandes: duas colunas */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   main {
-    grid-template-columns: 1fr 1fr;
+    padding: 24px;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-areas:
+      "intro"
+      "video"
+      "tabela";
   }
 }
 
 /*tabelas*/
-.tabela {
+table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1em;
