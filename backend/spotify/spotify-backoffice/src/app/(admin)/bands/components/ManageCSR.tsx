@@ -2,6 +2,7 @@
 import Button from "@/app/components/Button";
 import { Band } from "../../../../../prisma/generated/prisma/client";
 import { useEffect, useState } from "react";
+import Loading from "@/app/components/Loading";
 
 const TableRow = ({ band }: { band: Band }) => {
   return (
@@ -28,6 +29,7 @@ const TableRow = ({ band }: { band: Band }) => {
 
 export default function ManageCSR() {
   const [bands, setBands] = useState<Band[] | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchBands = async () => {
@@ -36,6 +38,7 @@ export default function ManageCSR() {
         const response = await fetch("http://localhost:3001/api/band");
         const bands: Band[] = await response.json();
         setBands(bands);
+        setLoading(false);
       } catch (error: unknown) {
         console.log(error);
       }
@@ -43,31 +46,35 @@ export default function ManageCSR() {
     fetchBands();
   }, []);
 
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <section className="overflow-x-auto p-4">
       <header className="flex justify-end mb-4">
         <Button>Adicionar Banda</Button>
       </header>
       <table className="min-w-full border border-gray-200 round-sm overflow-hidden">
-        <thead className="bg-gray-100 text-gray-50 uppercase text-left"></thead>
-
-        <tr>
-          <th scope="col" className="px-6 py-3">
-            Nome
-          </th>
-          <th scope="col" className="px-6 py-3">
-            Descrição
-          </th>
-          <th scope="col" className="px-6 py-3">
-            Status
-          </th>
-          <th scope="col" className="px-6 py-3">
-            Status
-          </th>
-          <th scope="col" className="px-6 py-3">
-            Status
-          </th>
-        </tr>
+        <thead className="bg-gray-100 text-gray-50 uppercase text-left">
+          <tr>
+            <th scope="col" className="px-6 py-3">
+              Nome
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Descrição
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Status
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Status
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Status
+            </th>
+          </tr>
+        </thead>
         <tbody className="bg-white divide-y divide-gray-200">
           {Array.isArray(bands) && bands.length > 0 ? (
             bands.map((band) => <TableRow key={band.id} band={band} />)

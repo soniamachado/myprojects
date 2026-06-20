@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="spotifyGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1DB954"/>
+      <stop offset="100%" stop-color="#1ed760"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fundo opcional -->
+  <rect width="120" height="120" fill="#121212" rx="20"/>
+
+  <!-- Círculo base -->
+  <circle
+    cx="60"
+    cy="60"
+    r="40"
+    fill="none"
+    stroke="#1f1f1f"
+    stroke-width="8"
+  />
+
+  <!-- Círculo animado -->
+  <circle
+    cx="60"
+    cy="60"
+    r="40"
+    fill="none"
+    stroke="url(#spotifyGreen)"
+    stroke-width="8"
+    stroke-linecap="round"
+    stroke-dasharray="188"
+    stroke-dashoffset="140"
+  >
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 60 60"
+      to="360 60 60"
+      dur="1s"
+      repeatCount="indefinite"
+    />
+  </circle>
+</svg>
