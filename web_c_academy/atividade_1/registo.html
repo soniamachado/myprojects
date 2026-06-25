@@ -1,0 +1,90 @@
+<!--exercicio 1-->
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--É uma instrução usada na criação de sites para que o conteúdo se ajuste automaticamente à tela de celulares ou tablets. Isso impede que a página fique com aparência minúscula e precise de zoom manual -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--aparecer na descricao do titulo na pagina do campo de busca-->
+    <meta
+      name="description"
+      content="Projeto de Tecnologias de Aplicações Web"
+    />
+    <title>Projeto de Tecnologias de Aplicações Web</title>
+    <link
+      href="\\wsl.localhost\Ubuntu\home\sonia_machado\Documents\myproject\web_c_academy\atividade_1\style.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--session1-->
+    <div>
+      <nav>
+        <h1>Tecnologias de Aplicações Web</h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="formulario.html">A minha conta</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!--session2-->
+    <main>
+      <section class="formulario" id="registo-formulario">
+        <h2>Registo</h2>
+        <!-- <p><form name="registo"> -->
+          <form name="registo">
+            <label> Nome de utilizador:<input type="text" placehoder="Digite o nome do utilizador" id="username" name="username"  ></label>
+            <br />
+            <label> Palavra-passe: <input type="password" id="password" placehoder="Digite a password" name="password" require></label>
+            <br />
+            <br />
+            <label for="foto">Foto de perfil:</label>
+            <input type="file" name="foto">
+            <input type="button" value="Upload">
+            <br>
+            <label>Nome:<input type="text" id="name" name="name" ></label>
+            <br>
+            <label>Email:<input type="text" id="email" name="email"></label>
+            <br>
+             <label>Telemóvel:<input type="number" id="telemovel" name="telemovel"></label>
+            <br>
+            <label>Nif (9caracteres):<input type="number" id="nif" name="nif" min="1" max="9"></label>
+            <br>
+            <label>Morada:<input type="text" id="morada" name="morada" max="56"></label>
+            <br>
+            <input type="submit" value="Registar" />
+            <br>
+            <button onclick='location.href="formulario.html"'>Mudar para Loggin</button></br>
+            <br>
+
+          </form>
+      </section>
+      <section class="perfil" id="vista-perfil">
+        <h2>Dados do utilizador</h2>
+        <h3>Olá "variável"</h3>
+        <!-- dados do utilizador -->
+        <div class="dadosUtilizador">
+          <p>Nome + "nome"</p>
+          <p>Email + "email"</p>
+          <p>Telemóvel + "email"</p>
+          <p>Username + "email"</p>
+          <p>NIF + "email"</p>
+          <p>Morada + ",orada"</p>
+        </div>
+        <div class="fotoDePerfil"><img src="medium\logo_html.png" alt="Logo HTML" />
+        </div>
+        <div class="botaoLogout">
+          <button onclick='location.href="formulario.html"'> Sair da Conta (logout) </button>
+        </div>
+      </section>
+    </main>
+    <!--session1-rodapé-->
+    <footer>
+      <p>
+        © C-ACADEMY 2025 Projeto Módulo de Tecnologias de Aplicações Web.
+        Desenvolvido por Grupo X [Nome dos Estudantes]
+      </p>
+    </footer>
+  </body>
+</html>

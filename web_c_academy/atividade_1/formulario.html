@@ -30,54 +30,28 @@
     </div>
     <!--session2-->
     <main>
-      <section class="intro">
-        <h2>Visualização de Video</h2>
+      <section class="formulario" id="vista-formulario">
+        <h2>Login</h2>
+        
+          <form name="login">
+            <label> Nome de utilizador:<input type="text" placehoder="Digite o nome do utilizador" id="username" name="username" required ></label>
+            <br />
+            <label> Palavra-passe: <input type="password" id="password" placehoder="Digite a password" name="password" required ></label>
+            <br />
+            <input type="submit" value="Entrar" />
+            <br>
+            <button onclick='location.href="registo.html"'">Ir para Registo</button></br>
+         
+          </form>
+
+      </section>
+      <section class="perfil" id="vista-perfil">
+        <h2>Dados do utilizador</h2>
         <p>
           Lorem is simply dummy text of the printing and typesetting
           industry.Lorem is simply dummy text of the printing and typesetting
           industry.
         </p>
-      </section>
-
-      <section class="video-section">
-        <video
-          src="https://www.youtube.com/watch?v=it1rTvBcfRg.mp4"
-          controls
-        ></video>
-      </section>
-
-      <section class="tabela">
-        <h3>Tabela de Recursos do Projeto</h3>
-        <table>
-          <tr>
-            <th></th>
-            <th>Recurso</th>
-            <th>Tipo de Ficheiro</th>
-            <th>Utilização</th>
-          </tr>
-          <tr>
-            <td><img src="medium\logo_html.png" alt="Logo HTML" /></td>
-            <td>Hypertext Markup Language</td>
-            <td>.html</td>
-            <td>Permite descrever conteúdo de páginas web</td>
-          </tr>
-
-          <tr>
-            <td><img src="medium\logo_css.png" alt="Logo CSS" /></td>
-            <td>Cascading Style Sheets</td>
-            <td>.css</td>
-            <td>
-              Responsável pela apresentação e formatação dos elementos HTML
-            </td>
-          </tr>
-          <tr>
-            <td><img src="medium\logo_js.png" alt="Logo Javascript" /></td>
-            <td>Javascript</td>
-            <td>.js</td>
-            <td>Permite adicionar comportamento no cliente (browser)</td>
-          </tr>
-        </table>
-      </section>
     </main>
     <!--session1-rodapé-->
     <footer>
@@ -86,5 +60,6 @@
         Desenvolvido por Grupo X [Nome dos Estudantes]
       </p>
     </footer>
+    <script src="ficheiroJavaScript.js"></script>
   </body>
 </html>

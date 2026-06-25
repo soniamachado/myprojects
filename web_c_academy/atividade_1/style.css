@@ -71,8 +71,7 @@ nav a:hover {
   color: #e67d40;
   text-decoration: underline;
 }
-video,
-img {
+video img {
   max-width: 100%;
   height: auto;
   display: block;
