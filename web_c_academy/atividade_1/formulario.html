@@ -1,6 +1,7 @@
 <!--exercicio 1-->
 <!doctype html>
 <html lang="pt">
+  <script src= "ficheiroJavaScriptLogin.js"> </script>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -33,25 +34,42 @@
       <section class="formulario" id="vista-formulario">
         <h2>Login</h2>
         
-          <form name="login">
-            <label> Nome de utilizador:<input type="text" placehoder="Digite o nome do utilizador" id="username" name="username" required ></label>
+          <form id="login">
+            <label> Nome de utilizador:<input type="text" placeholder="Digite o nome do utilizador" id="username" name="username" required ></label>
             <br />
-            <label> Palavra-passe: <input type="password" id="password" placehoder="Digite a password" name="password" required ></label>
+            <label> Palavra-passe: <input type="password" id="password" placeholder="Digite a password" name="password" required ></label>
             <br />
             <input type="submit" value="Entrar" />
             <br>
-            <button onclick='location.href="registo.html"'">Ir para Registo</button></br>
+            <button onclick='location.href="registo.html"'>Ir para Registo</button></br>
          
           </form>
 
       </section>
       <section class="perfil" id="vista-perfil">
         <h2>Dados do utilizador</h2>
-        <p>
-          Lorem is simply dummy text of the printing and typesetting
-          industry.Lorem is simply dummy text of the printing and typesetting
-          industry.
-        </p>
+  <h2>Dados do utilizador</h2>
+          <h3>"Olá" + nome_utilizador</h3>
+            <div class="dadosUtilizador">
+              <!-- Dados do Utilizador -->
+              <p>Nome:  + (variavel_nome_utilizador)</p>
+              <p>"Email:  + (variavel_email_utilizador)</p>
+              <p>Telemóvel:  + (variavel_telemóvel_utilizador)</p>
+              <p>"Username: " + (variavel_username_utilizador)</p>
+              <p>NIF:  + (variavel_nif_utilizador)</p>
+              <p>Morada:  + (variavel_morada_utilizador)</p>
+            </div>
+            
+            <div class="fotoPerfil">
+              <img src="medium\OIP.webp"> <!-- Colocar a forma de ir buscar ao update -->
+            </div>
+
+            <div class="botaoLogout">
+              <button onclick='location.href="formulario.html"'>Sair da Conta (Logout)</button>
+            </div>
+      </section>
+
+>
     </main>
     <!--session1-rodapé-->
     <footer>
@@ -60,6 +78,7 @@
         Desenvolvido por Grupo X [Nome dos Estudantes]
       </p>
     </footer>
-    <script src="ficheiroJavaScript.js"></script>
+    </section>
+
   </body>
 </html>
