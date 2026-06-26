@@ -9,10 +9,27 @@ function getDadosUtilizador() {
     nif: document.getElementById("nif").value,
     morada: document.getElementById("morada").value,
   };
-
   // "return" = a função devolve este objeto para quem a chamou
   return utilizador;
 }
+//Primeiro crio duas funções pequenas: uma para ler a lista que já existe, outra para guardar a lista atualizada.
+// Vai buscar a lista de utilizadores guardada no localStorage.
+// Se ainda não existir nenhuma, devolve uma lista vazia [].
+function getUtilizadores() {
+  let dados = localStorage.getItem("utilizadores"); // isto vem como texto (ou null)
+  if (dados === null) {
+    return []; // primeira vez: ainda não há nada guardado
+  }
+  // transforma o texto de volta num array de objetos
+  return JSON.parse(dados);
+}
+
+// Guarda a lista de utilizadores no localStorage.
+function guardarUtilizadores(lista) {
+  // transforma o array em texto, porque o localStorage só guarda texto
+  localStorage.setItem("utilizadores", JSON.stringify(lista));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   //Só fazemos o que está dentro da função quando o DOMContentLoaded é chamado
   let login = document.getElementById("registo"); // vai buscar o elemento que tem o id como "registo"
@@ -20,11 +37,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // quando o botão do tipo "submit" é selecionado executa o que está aqui dentro
     event.preventDefault();
 
-    // chama a função e guarda a ficha devolvida numa variável
+    // 1. apanhar a ficha que o utilizador preencheu
     let novoUtilizador = getDadosUtilizador();
 
-    // por agora só mostramos no console para confirmar que apanhámos tudo
-    console.log(novoUtilizador);
+    // 2. ir buscar a lista que já existe (ou [] se for a primeira vez)
+    let utilizadores = getUtilizadores();
+
+    // 3. juntar o novo utilizador ao fim da lista
+    utilizadores.push(novoUtilizador);
+
+    // 4. voltar a guardar a lista atualizada no localStorage
+    guardarUtilizadores(utilizadores);
+
+    // confirmar no console
+    console.log("Novo utilizador:", novoUtilizador);
+    console.log("Lista completa:", utilizadores);
   });
 });
 
