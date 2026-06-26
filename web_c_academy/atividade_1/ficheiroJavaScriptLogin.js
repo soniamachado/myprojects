@@ -14,17 +14,17 @@ function getUtilizadores() {
 // esconde o formulário e mostra a secção do perfil.
 function mostrarPerfil(utilizador) {
   // preencher cada espaço (span) com o respetivo dado
-  document.getElementById("perfil-ola").textContent =
+  document.getElementById("perfil-ola").innerText =
     "Olá, " + utilizador.name + "!";
-  document.getElementById("perfil-nome").textContent = "Nome: " + utilizador.name;
-  document.getElementById("perfil-email").textContent =
+  document.getElementById("perfil-nome").innerText = "Nome: " + utilizador.name;
+  document.getElementById("perfil-email").innerText =
     "Email: " + utilizador.email;
-  document.getElementById("perfil-telemovel").textContent =
+  document.getElementById("perfil-telemovel").innerText =
     "Telemóvel: " + utilizador.telemovel;
-  document.getElementById("perfil-username").textContent =
+  document.getElementById("perfil-username").innerText =
     "Username: " + utilizador.username;
-  document.getElementById("perfil-nif").textContent = "NIF: " + utilizador.nif;
-  document.getElementById("perfil-morada").textContent =
+  document.getElementById("perfil-nif").innerText = "NIF: " + utilizador.nif;
+  document.getElementById("perfil-morada").innerText =
     "Morada: " + utilizador.morada;
 
   // esconder o formulário e mostrar o perfil

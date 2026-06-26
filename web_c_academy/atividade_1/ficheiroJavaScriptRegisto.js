@@ -44,15 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let utilizadores = getUtilizadores();
 
     // 3. verificar se já existe alguém com este username
-    //    Percorremos a lista um a um com um ciclo "for".
-    let jaExiste = false; // começamos a assumir que NÃO existe
-
-    for (let i = 0; i < utilizadores.length; i++) {
-      // utilizadores[i] é o utilizador na posição i
-      if (utilizadores[i].username === novoUtilizador.username) {
-        jaExiste = true; // encontrámos um igual!
-      }
-    }
+    //    .some() devolve true se ALGUM utilizador da lista cumprir a condição
+    let jaExiste = utilizadores.some(
+      (u) => u.username === novoUtilizador.username,
+    );
 
     if (jaExiste) {
       alert("Esse nome de utilizador já está registado!");
