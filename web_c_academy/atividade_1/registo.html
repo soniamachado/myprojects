@@ -35,23 +35,23 @@
         <h2>Registo</h2>
         <!-- <p><form name="registo"> -->
           <form name="registo" id="registo">
-            <label> Nome de utilizador:<input type="text" placehoder="Digite o nome do utilizador" id="username" name="username"  ></label>
+            <label> Nome de utilizador:<input type="text" placeholder="Digite o nome do utilizador" id="username" name="username" required ></label>
             <br />
-            <label> Palavra-passe: <input type="password" id="password" placehoder="Digite a password" name="password" require></label>
+            <label> Palavra-passe: <input type="password" id="password" placeholder="Digite a password" name="password" required></label>
             <br />
             <label for="foto">Foto de perfil:</label>
             <input type="file"  id="foto" name="foto">
             <input type="button" value="Upload">
             <br>
-            <label>Nome:<input type="text" id="name" name="name" ></label>
+            <label>Nome:<input type="text" id="name" name="name" required ></label>
             <br>
-            <label>Email:<input type="text" id="email" name="email"></label>
+            <label>Email:<input type="email" id="email" name="email" required></label>
             <br>
-             <label>Telemóvel:<input type="number" id="telemovel" name="telemovel"></label>
+             <label>Telemóvel:<input type="number" id="telemovel" name="telemovel" required></label>
             <br>
-            <label>Nif (9caracteres):<input type="number" id="nif" name="nif" min="1" max="9"></label>
+            <label>Nif (9 dígitos):<input type="number" id="nif" name="nif" min="1" max="9" required></label>
             <br>
-            <label>Morada:<input type="text" id="morada" name="morada" max="56"></label>
+            <label>Morada:<input type="text" id="morada" name="morada" max="56" required></label>
             <br>
             <input type="submit" value="Registar" />
             <br>
@@ -75,7 +75,7 @@
         <div class="fotoDePerfil"><img src="medium\logo_html.png" alt="Logo HTML" />
         </div>
         <div class="botaoLogout">
-          <button onclick='location.href="formulario.html"'> Sair da Conta (logout) </button>
+          <button type="button" onclick='location.href="login.html"'> Sair da Conta (logout) </button>
         </div>
       </section>
     </main>

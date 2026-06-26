@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 3. verificar se já existe alguém com este username
     //    .some() devolve true se ALGUM utilizador da lista cumprir a condição
     let jaExiste = utilizadores.some(
-      (u) => u.username === novoUtilizador.username
+      (u) => u.username === novoUtilizador.username,
     );
 
     if (jaExiste) {
