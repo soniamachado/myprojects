@@ -47,9 +47,10 @@
             <br>
             <label>Email:<input type="email" id="email" name="email" required></label>
             <br>
-             <label>Telemóvel:<input type="number" id="telemovel" name="telemovel" required></label>
+            <label>Telemóvel:<input type="number" id="telemovel" name="telemovel" pattern="[0-9]{9}" maxlength="9" required></label>
             <br>
-            <label>Nif (9 dígitos):<input type="number" id="nif" name="nif" min="1" max="9" required></label>
+            <label>Nif (9 dígitos):<input type="number" id="nif" name="nif" pattern="[0-9]{9}" maxlength="9" required></label>
+            <br>
             <br>
             <label>Morada:<input type="text" id="morada" name="morada" max="56" required></label>
             <br>
@@ -60,11 +61,11 @@
 
           </form>
       </section>
-      <section class="perfil" id="vista-perfil">
+      <!-- <section class="perfil" id="vista-perfil">
         <h2>Dados do utilizador</h2>
-        <h3>Olá "variável"</h3>
+        <h3>Olá "variável"</h3> -->
         <!-- dados do utilizador -->
-        <div class="dadosUtilizador">
+        <!-- <div class="dadosUtilizador">
           <p>Nome + "nome"</p>
           <p>Email + "email"</p>
           <p>Telemóvel + "email"</p>
@@ -77,7 +78,7 @@
         <div class="botaoLogout">
           <button type="button" onclick='location.href="login.html"'> Sair da Conta (logout) </button>
         </div>
-      </section>
+      </section> -->
     </main>
     <!--session1-rodapé-->
     <footer>

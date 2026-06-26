@@ -10,6 +10,24 @@ function getUtilizadores() {
   return JSON.parse(dados);
 }
 
+// Preenche o perfil com os dados do utilizador,
+// esconde o formulário e mostra a secção do perfil.
+function mostrarPerfil(utilizador) {
+  // preencher cada espaço (span) com o respetivo dado
+  document.getElementById("perfil-ola").textContent =
+    "Olá, " + utilizador.name + "!";
+  document.getElementById("perfil-nome").textContent = utilizador.name;
+  document.getElementById("perfil-email").textContent = utilizador.email;
+  document.getElementById("perfil-telemovel").textContent = utilizador.telemovel;
+  document.getElementById("perfil-username").textContent = utilizador.username;
+  document.getElementById("perfil-nif").textContent = utilizador.nif;
+  document.getElementById("perfil-morada").textContent = utilizador.morada;
+
+  // esconder o formulário e mostrar o perfil
+  document.getElementById("vista-formulario").style.display = "none";
+  document.getElementById("vista-perfil").style.display = "block";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Só fazemos o que está dentro da função quando o DOMContentLoaded é chamado
   let login = document.getElementById("login"); // vai buscar o formulário com o id "login"
@@ -37,9 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     console.log("Login com sucesso:", utilizador);
-    alert("Bem-vindo, " + utilizador.name + "!");
 
-    // (opcional) mostrar os dados do utilizador na página
-    // ex: document.querySelector(".dadosUtilizador").innerHTML = ...
+    // mostrar a página de perfil com os dados deste utilizador
+    mostrarPerfil(utilizador);
   });
 });
