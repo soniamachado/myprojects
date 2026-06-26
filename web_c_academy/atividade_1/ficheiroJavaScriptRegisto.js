@@ -43,15 +43,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. ir buscar a lista que já existe (ou [] se for a primeira vez)
     let utilizadores = getUtilizadores();
 
-    // 3. juntar o novo utilizador ao fim da lista
+    // 3. verificar se já existe alguém com este username
+    //    .some() devolve true se ALGUM utilizador da lista cumprir a condição
+    let jaExiste = utilizadores.some(
+      (u) => u.username === novoUtilizador.username
+    );
+
+    if (jaExiste) {
+      alert("Esse nome de utilizador já está registado!");
+      return; // pára aqui: não adiciona nem guarda
+    }
+
+    // 4. juntar o novo utilizador ao fim da lista
     utilizadores.push(novoUtilizador);
 
-    // 4. voltar a guardar a lista atualizada no localStorage
+    // 5. voltar a guardar a lista atualizada no localStorage
     guardarUtilizadores(utilizadores);
 
     // confirmar no console
     console.log("Novo utilizador:", novoUtilizador);
     console.log("Lista completa:", utilizadores);
+
+    // 6. dar feedback ao utilizador e limpar o formulário
+    alert("Registo efetuado com sucesso!");
+    login.reset();
   });
 });
 
