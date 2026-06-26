@@ -46,17 +46,17 @@
           </form>
 
       </section>
-      <section class="perfil" id="vista-perfil">
+      <section class="perfil" id="vista-perfil" style="display: none">
         <h2>Dados do utilizador</h2>
-          <h3>"Olá" + nome_utilizador</h3>
+          <h3 id="perfil-ola">Olá!</h3>
             <div class="dadosUtilizador">
-              <!-- Dados do Utilizador -->
-              <p>Nome:  + (variavel_nome_utilizador)</p>
-              <p>"Email:  + (variavel_email_utilizador)</p>
-              <p>Telemóvel:  + (variavel_telemóvel_utilizador)</p>
-              <p>"Username: " + (variavel_username_utilizador)</p>
-              <p>NIF:  + (variavel_nif_utilizador)</p>
-              <p>Morada:  + (variavel_morada_utilizador)</p>
+              <!-- Dados do Utilizador (preenchidos pelo JavaScript) -->
+              <p id="perfil-nome"></p>
+              <p id="perfil-email"></p>
+              <p id="perfil-telemovel"></p>
+              <p id="perfil-username"></p>
+              <p id="perfil-nif"></p>
+              <p id="perfil-morada"></p>
             </div>
             
             <div class="fotoPerfil">
