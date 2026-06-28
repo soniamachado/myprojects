@@ -48,9 +48,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let utilizadores = getUtilizadores();
 
     // 3. Procurar um utilizador com o mesmo username e password
-    let utilizador = utilizadores.find(
-      (u) => u.username === username && u.password === password
-    );
+    //    Versão curta com .find() (deixada em comentário):
+    // let utilizador = utilizadores.find(
+    //   (u) => u.username === username && u.password === password
+    // );
+
+    //    Versão com ciclo "for": percorremos a lista um a um
+    let utilizador = undefined; // começamos sem ter encontrado ninguém
+
+    for (let i = 0; i < utilizadores.length; i++) {
+      // utilizadores[i] é o utilizador na posição i
+      if (
+        utilizadores[i].username === username &&
+        utilizadores[i].password === password
+      ) {
+        utilizador = utilizadores[i]; // encontrámos! guardamos este utilizador
+      }
+    }
 
     // 4. Verificar se encontrou
     if (utilizador === undefined) {
