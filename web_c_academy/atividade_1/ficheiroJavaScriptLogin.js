@@ -2,13 +2,12 @@
 // Se ainda não existir nenhum, devolve um array vazio.
 function getUtilizadores() {
   let dados = localStorage.getItem("utilizadores");
-
   if (dados === null) {
     return [];
   }
-
   return JSON.parse(dados);
 }
+//a mesma função getUtilizadores() do ficheiro ficheiroJavaScriptRegisto.js, mas aqui é usada para o login. a chave "utilizadores" é a mesma, porque é o mesmo localStorage que guarda os dados. O localStorage é como uma gaveta: tu guardas lá dentro um texto (uma string) com a etiqueta "utilizadores". E depois, quando queres ler, pedes ao localStorage o que está guardado debaixo da etiqueta "utilizadores". O localStorage não tem gavetas individuais para cada utilizador, só tem uma gaveta para a lista inteira.
 
 // Preenche o perfil com os dados do utilizador,
 // esconde o formulário e mostra a secção do perfil.
@@ -31,6 +30,11 @@ function mostrarPerfil(utilizador) {
   document.getElementById("vista-formulario").style.display = "none";
   document.getElementById("vista-perfil").style.display = "block";
 }
+// O .style.display é o JavaScript a mexer no CSS de cada secção, ao vivo:
+
+// "none" → esconde
+// "block" → mostra
+// Então: o formulário (que estava visível) passa a none, e o perfil (que estava none) passa a block. Resultado: o formulário desaparece e o perfil aparece no lugar dele. 🎉
 
 document.addEventListener("DOMContentLoaded", () => {
   // Só fazemos o que está dentro da função quando o DOMContentLoaded é chamado
@@ -42,7 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 1. Ir buscar o que o utilizador escreveu
     let username = document.getElementById("username").value;
+    //document.getElementById("username") → encontra a caixa de texto com id="username".let username = ... → guarda esse valor na variável username
+    //.value → lê o que está lá escrito nesse momento (o que o utilizador digitou).O .value aqui está do lado direito do =, por isso está a ler (a tirar o valor de dentro da caixa).
     let password = document.getElementById("password").value;
+
+    // 1.5. Verificar se é a conta de ADMIN (fixa no código).
+    //      Se for, salta logo para a página de administração e pára aqui.
+    if (username === "admin" && password === "admin") {
+      window.location.href = "admin.html";
+      return;
+    }
 
     // 2. Ir buscar todos os utilizadores registados
     let utilizadores = getUtilizadores();
@@ -78,3 +91,18 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarPerfil(utilizador);
   });
 });
+
+//A grande diferença: LER vs ESCREVER
+// Repara nestes dois usos opostos no teu código:
+
+// LER (buscar o que está na caixa) — .value à direita do =:
+
+// let username = document.getElementById("username").value;
+// //   recebe   ◄────────────────────────────────── lê daqui
+// ESCREVER (pôr texto no ecrã) — à esquerda do =:
+
+// document.getElementById("perfil-nome").innerText = "Nome: " + utilizador.name;
+// //  escreve aqui ──────────────────────────────► o valor da direita
+// Onde está	O que faz
+// .value (à direita do =)	login	lê o que o utilizador escreveu
+// .innerText (à esquerda do =)	perfil	mostra texto no ecrã
