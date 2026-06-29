@@ -90,3 +90,23 @@ document.addEventListener("DOMContentLoaded", () => {
 // corpoTabela.innerHTML += "<tr>..."; // ACRESCENTA ao que já lá está (cola no fim)
 // = → troca o conteúdo todo.
 // += → junta ao conteúdo que já existe (é o + de "somar texto", que já usaste no perfil).
+
+// //2) Ter mais do que um admin
+// Usas o || (que significa OU):
+
+//explicação da conta admin no login: no ficheiro ficheiroJavaScriptLogin.js, tens isto:
+// if (
+//   (username === "admin" && password === "admin") ||
+//   (username === "sonia" && password === "1234")
+// ) {
+//   window.location.href = "admin.html";
+//   return;
+// }
+// Isto lê-se: "se for o admin1 OU o admin2 → vai para a página de admin".
+
+// Relembra: && = E (as duas condições verdadeiras); || = OU (basta uma).
+
+// Uma nota importante (segurança)
+// Pôr a password no código tem um problema: qualquer pessoa que abra o ficheiro .js vê a password. Para um trabalho escolar não há problema, mas numa app a sério isto nunca se faz — a verificação seria feita num servidor, longe dos olhos do utilizador.
+
+// Queres que eu acrescente um admin com o username/password que quiseres, ou preferes mudar o admin/admin atual para outro? Diz-me os dados que queres usar.
